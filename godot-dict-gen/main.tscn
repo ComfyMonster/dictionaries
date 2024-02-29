@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3q67k2u8es7k"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_07ajk"]
+[ext_resource type="Script" path="res://GDSExporter.gd" id="1_m4025"]
+[ext_resource type="Script" path="res://CSharpExporter.cs" id="3_rt77k"]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("_output")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_07ajk")
+_output = NodePath("Output")
+
+[node name="FileDialog" type="FileDialog" parent="."]
+unique_name_in_owner = true
+size = Vector2i(454, 159)
+access = 2
+
+[node name="Output" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GDSExporter" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_m4025")
+
+[node name="CSharpExporter" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_rt77k")
